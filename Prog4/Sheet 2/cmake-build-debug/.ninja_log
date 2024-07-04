@@ -1,0 +1,19 @@
+# ninja log v5
+6	548	7415702673599600	CMakeFiles/untitled2.dir/main.cpp.obj	7f65972ac0678c07
+549	738	7415702675478173	untitled2.exe	400e007a33b5d6ab
+22	380	7415713870327977	CMakeFiles/untitled2.dir/Article.cpp.obj	9f4fc017084b8541
+4	382	7415713870337977	CMakeFiles/untitled2.dir/main.cpp.obj	7f65972ac0678c07
+34	383	7415713870379293	CMakeFiles/untitled2.dir/City.cpp.obj	bfe97aeec46e2b59
+28	485	7415713871385769	CMakeFiles/untitled2.dir/Storehouse.cpp.obj	afd36c4c1be35c68
+485	689	7415713873409976	untitled2.exe	29df10305894c55f
+34	371	7415721050677842	CMakeFiles/untitled2.dir/City.cpp.obj	bfe97aeec46e2b59
+21	374	7415721050687832	CMakeFiles/untitled2.dir/Article.cpp.obj	9f4fc017084b8541
+4	378	7415721050768650	CMakeFiles/untitled2.dir/main.cpp.obj	7f65972ac0678c07
+28	478	7415721051749183	CMakeFiles/untitled2.dir/Storehouse.cpp.obj	afd36c4c1be35c68
+478	678	7415721053737989	untitled2.exe	29df10305894c55f
+4	366	7415725060110583	CMakeFiles/untitled2.dir/main.cpp.obj	7f65972ac0678c07
+366	568	7415725062082888	untitled2.exe	29df10305894c55f
+3	362	7415726217102947	CMakeFiles/untitled2.dir/main.cpp.obj	7f65972ac0678c07
+363	555	7415726219039899	untitled2.exe	29df10305894c55f
+4	321	7415742264999856	CMakeFiles/untitled2.dir/Article.cpp.obj	9f4fc017084b8541
+321	484	7415742266594306	untitled2.exe	29df10305894c55f
