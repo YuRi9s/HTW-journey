@@ -1,0 +1,130 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+% Title Formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Custom Commands for Style
+\newcommand{\smallgray}[1]{\textcolor{gray}{\small #1}}
+
+% Horizontal Rule with Custom Thickness
+\newcommand{\myrule}{\noindent\rule{\textwidth}{0.5pt}}
+
+\begin{document}
+
+% Custom Title
+\noindent\smallgray{Programmierung 2 - Sommersemester 2024}
+
+\section*{\LARGE Review-Report zur Übung Nr. \dots}
+
+\myrule
+
+\vspace{0.5cm}
+
+\noindent\textbf{Coding-Team: 46}\\
+\textbf{Review erhalten von: Moritz Niederer}
+
+\vspace{0.5cm}
+
+\myrule
+
+\vspace{1cm}
+
+\section*{Feedback und Code-Qualität}
+
+\subsection*{Welche spezifischen Aspekte Ihres Codes wurden im Review positiv hervorgehoben?}
+\begin{itemize}
+    \item Der effiziente Einsatz von \texttt{PriorityQueue} und \texttt{LinkedList} wurde positiv hervorgehoben.
+    \item Warum wurden sie Ihrer Meinung nach hervorgehoben?
+    \item Diese wurden hervorgehoben, weil sie eine effektive Priorisierung und dynamische Verwaltung der Speichergröße ermöglichen.
+    \item Welche guten Praktiken spiegeln diese Aspekte wider?
+    \item Diese Aspekte spiegeln gute Praktiken wie die Nutzung geeigneter Datenstrukturen für spezifische Anforderungen wider.
+\end{itemize}
+
+\subsection*{Identifizieren Sie spezifische Anforderungen, die nicht oder nur teilweise umgesetzt wurden.}
+\begin{itemize}
+    \item Es wurde festgestellt, dass die \texttt{addUser}-Methode in Aufgabe 2 nicht wie beabsichtigt funktionierte.
+    \item Beschreiben Sie die Verbesserungsvorschläge, die Sie erhalten haben.
+    \item Der Verbesserungsvorschlag bestand darin, die Methode zu überprüfen und sicherzustellen, dass Benutzer korrekt in der \texttt{HashMap} gespeichert werden.
+\end{itemize}
+
+\subsection*{Nennen Sie drei konkrete Verbesserungsvorschläge, die Ihnen für sauberen, lesbaren und wartbaren Code gemacht wurden.}
+\begin{itemize}
+    \item Verwenden von klaren und präzisen Kommentaren.
+    \item Modularisierung des Codes durch Aufteilung in kleinere, gut definierte Methoden.
+    \item Regelmäßige Überprüfung und Testen des Codes während der Entwicklung.
+    \item Wie werden Sie diese umsetzen?
+    \item Ich werde sicherstellen, dass Kommentare den Code klar erklären, Methoden klein und spezifisch halten und den Code regelmäßig testen, um Fehler frühzeitig zu erkennen.
+\end{itemize}
+
+\subsection*{Welche weiteren konkreten Ratschläge haben Sie erhalten und wie können diese die Qualität Ihrer Implementierung verbessern?}
+\begin{itemize}
+    \item Ein weiterer Ratschlag war, die Benutzeroberfläche benutzerfreundlicher zu gestalten.
+    \item Dies kann die Qualität der Implementierung verbessern, indem es die Benutzerinteraktion erleichtert und Fehler reduziert.
+\end{itemize}
+
+\section*{Verständnis und Lernprozess}
+
+In diesem Abschnitt reflektieren Sie Ihr Verständnis der behandelten Konzepte und Ihre Fortschritte beim Erreichen der Lernziele. Die Fragen sollen Sie dazu anregen, über offene Fragen und unklare Aspekte nachzudenken. Wenn Sie sich aktiv mit diesen Fragen auseinandersetzen, können Sie Wissenslücken erkennen und gezielt Maßnahmen ergreifen, um diese zu schließen.
+
+\subsection*{Welche Fragen zu Ihrem Code konnten Sie während des Reviews nicht beantworten und wie werden Sie diese Unklarheiten klären?}
+\begin{itemize}
+    \item Die genaue Funktionsweise der \texttt{PriorityQueue} war mir nicht vollständig klar.
+    \item Ich werde die Dokumentation und zusätzliche Ressourcen studieren, um ein besseres Verständnis zu erlangen.
+\end{itemize}
+
+\subsection*{Welche Aspekte der Übung sind Ihnen unklar geblieben und welche Schritte werden Sie unternehmen, um diese zu verstehen?}
+\begin{itemize}
+    \item Die genaue Implementierung der Filter- und Sortierfunktionen in der
+          \\ \texttt{displayFilteredAndSortedBooks}-Methode war unklar.
+    \item Ich werde die Methode weiter analysieren und zusätzliche Beispiele durchgehen, um die Implementierung vollständig zu verstehen.
+\end{itemize}
+
+\subsection*{Bewerten Sie, inwieweit Sie die Lernziele der Übung erreicht haben.}
+\begin{itemize}
+    \item Welche Lernziele haben Sie nicht erreicht und was brauchen Sie, um diese Lücken zu schließen?
+    \item Ich habe das Ziel, eine benutzerfreundliche Schnittstelle zu erstellen, nur teilweise erreicht. Um diese Lücke zu schließen, benötige ich mehr Übung und Feedback zur Gestaltung von Benutzeroberflächen.
+\end{itemize}
+
+\subsection*{In welchen Bereichen fühlen Sie sich nach dem Peer Review sicherer und warum?}
+\begin{itemize}
+    \item Ich fühle mich sicherer im Umgang mit Datenstrukturen wie \texttt{PriorityQueue} und
+          \\ \texttt{LinkedList}, weil ich positive Rückmeldungen zu deren Einsatz erhalten habe.
+\end{itemize}
+
+\section*{Reflexion über Feedback und Teamdynamik}
+
+Die folgenden Fragen beziehen sich auf Ihre Reaktion auf das erhaltene Feedback und Ihre Interaktion im Teamkontext. Hier haben Sie die Möglichkeit, über die Dynamik und die Herausforderungen der Teamarbeit nachzudenken. Indem Sie verstehen, wie Feedback integriert und Meinungsverschiedenheiten gelöst werden, bauen Sie wichtige soziale Kompetenzen aus, die in der Berufspraxis von großem Wert sind.
+
+\subsection*{Welche Aspekte des Feedbacks haben Sie am meisten überrascht und warum?}
+\begin{itemize}
+    \item Ich war überrascht über die positiven Rückmeldungen zu meiner Implementierung der Datenstrukturen, da ich deren Anwendung für selbstverständlich hielt.
+\end{itemize}
+
+\subsection*{Wie werden Sie das Feedback in zukünftigen Übungen und Projekten anwenden?}
+\begin{itemize}
+    \item Ich werde darauf achten, gute Praktiken beizubehalten und das erhaltene Feedback in die Gestaltung zukünftiger Projekte einfließen lassen.
+\end{itemize}
+
+\subsection*{Beschreiben Sie eine Situation während des Reviews, in der Sie eine Meinungsverschiedenheit hatten.}
+\begin{itemize}
+    \item Wie wurde sie gelöst?
+    \item Es gab eine Meinungsverschiedenheit über die beste Methode zur Implementierung der Filter- und Sortierfunktionen. Diese wurde durch eine Diskussion und das Einholen weiterer Meinungen gelöst, was zu einer verbesserten Implementierung führte.
+\end{itemize}
+
+\end{document}

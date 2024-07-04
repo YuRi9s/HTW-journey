@@ -1,0 +1,243 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage[ngerman]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{xcolor,listings}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{venndiagram}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{marvosym}
+\usepackage{listings,lstautogobble}
+
+\lstnewenvironment{javacode}[1][]
+{
+    \lstset{
+        language=Java,
+        basicstyle=\small\ttfamily,
+        keywordstyle=\color{blue},
+        commentstyle=\color{green!40!black},
+        stringstyle=\color{red},
+        numbers=left,
+        numberstyle=\tiny\color{purple},
+        stepnumber=1,
+        numbersep=10pt, % Adjusted to move line numbers outside the box
+        frame=single,
+        linewidth=\linewidth,
+        breaklines=true,
+        breakatwhitespace=false,
+        tabsize=4,
+        autogobble=true,
+        xleftmargin=0pt, % Adjusted to start from the left margin within the box
+        #1 % Options passed to lstset
+    }
+}
+{}
+
+\geometry{a4paper, margin=1in}
+\usetikzlibrary{er}
+\lstset{upquote=true}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,shapes}
+\usetikzlibrary{positioning, arrows.meta}
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Review Sections
+%
+
+\newcommand{\enterReviewHeader}[1]{
+    \nobreak\extramarks{}{Review \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Review \arabic{#1} (continued)}{Review \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitReviewHeader}[1]{
+    \nobreak\extramarks{Review \arabic{#1} (continued)}{Review \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Review \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{reviewProblemCounter}
+\setcounter{reviewProblemCounter}{1}
+\nobreak\extramarks{Review \arabic{reviewProblemCounter}}{}\nobreak{}
+
+%
+% Review Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% review counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{reviewProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{reviewProblemCounter}{#1}
+    \fi
+    \section{Review \arabic{reviewProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterReviewHeader{reviewProblemCounter}
+}{
+    \exitReviewHeader{reviewProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{}
+\newcommand{\hmwkDueDate}{May 29, 2024}
+\newcommand{\hmwkClass}{Programmierung 2 (PIB-PRG2/DFIW-PRG2)}
+\newcommand{\hmwkClassInstructor}{Prof. Markus Esch}
+\newcommand{\hmwkAuthorName}{\textbf{}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{3in}
+    \textmd{\textbf{\hmwkClass}}\\
+    \normalsize\vspace{0.2in}\small{Due\ on\ \hmwkDueDate\ at 20:00}\\
+    \vspace{0.2in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+\begin{reviewProblem}
+    \section*{Review-Report zur Übung Nr.4}
+    \subsection*{Coding-Team: 46}
+    \subsubsection*{Review erhalten von: Moritz Niederer}
+
+    \begin{enumerate}
+        \item \textbf{Erläutern Sie, welche Aspekte im Review als positiv bewertet wurden:}
+              \begin{enumerate}[label=\alph*.]
+                  \item Die Implementierung des Iterators und die Verwendung von inneren Klassen wurden positiv bewertet.
+                  \item Die Umsetzung der Status-Klasse als innere Klasse mit privaten Konstruktoren zur Erzwingung der Unveränderlichkeit wurde ebenfalls positiv bewertet.
+                  \item Die Implementierung der Matrix in Aufgabe 3 wurde anders gelöst, indem wir die Klasse BigDecimal anstelle von Generics verwendet habe. (Die BigDecimal-Klasse bietet eine Möglichkeit zur präzisen arithmetischen Berechnung mit Dezimalzahlen und wird häufig verwendet, um Genauigkeitsprobleme zu vermeiden, die bei der Verwendung von Fließkommazahlen auftreten können.)
+              \end{enumerate}
+
+        \item \textbf{Erläutern Sie, welche Anforderungen als unvollständig oder nicht umgesetzt identifiziert wurden und welche Hinweise Ihnen gegeben wurden, um die Anforderungen umzusetzen:}
+              \begin{enumerate}[label=\alph*.]
+                  \item Aufgabe 2 wurde nicht vollständig richtig gelöst, da der Sortieralgorithmus falsch deklariert wurde.
+              \end{enumerate}
+
+        \item \textbf{Welche Hinweise wurden Ihnen gegeben, um den Code sauberer, lesbarer und wartbarer zu gestalten?}
+              \begin{enumerate}[label=\alph*.]
+                  \item Die Sauberkeit meines Codes wurde positiv bewertet.
+              \end{enumerate}
+
+        \item \textbf{Welche weiteren Hinweise wurden gegeben?}
+              \begin{enumerate}[label=\alph*.]
+                  \item Es wurde empfohlen, die Sortieralgorithmen noch einmal zu überprüfen.
+                  \item Bei der Implementierung der Matrix-Aufgabe ohne Generics zu verwenden, wurde positiv hervorgehoben. Es wurde jedoch angeregt, den Code auch mit Generics zu verstehen und zu implementieren.
+              \end{enumerate}
+
+        \item \textbf{Welche Fragen zu Ihrem Code konnten Sie nicht beantworten?}
+              \begin{enumerate}[label=\alph*.]
+                  \item Alle Fragen konnten beantwortet werden.
+              \end{enumerate}
+
+        \item \textbf{Gibt es Aspekte der Übung, die Sie auch nach der Bearbeitung des Übungsblattes und nach dem Code Review nicht verstanden haben? Wenn ja, welche nicht?}
+              \begin{enumerate}[label=\alph*.]
+                  \item Nein, die Aspekte, Lernziele und die Struktur des Übungsblattes waren klar.
+              \end{enumerate}
+
+        \item \textbf{Haben Sie die Lernziele des Übungsblattes erreicht? Wenn nein, welche nicht?}
+              \begin{enumerate}[label=\alph*.]
+                  \item Ja, alle Lernziele wurden erreicht.
+              \end{enumerate}
+    \end{enumerate}
+
+
+
+    \section*{Coding-Team: 46}
+    \begin{minipage}[t]{0.45\textwidth}
+        Yahya Elshekh Selo\\
+        Matr. 5013655
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        Sherwan Diko\\
+        Matr. 5013656
+    \end{minipage}
+\end{reviewProblem}
+
+\end{document}

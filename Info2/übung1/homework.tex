@@ -1,0 +1,393 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage[ngerman]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{xcolor,listings}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{venndiagram}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{marvosym}
+\usepackage{listings,lstautogobble}
+
+
+
+\lstnewenvironment{javacode}[1][]
+{
+    \lstset{
+        language=Java,
+        basicstyle=\small\ttfamily,
+        keywordstyle=\color{blue},
+        commentstyle=\color{green!40!black},
+        stringstyle=\color{red},
+        numbers=left,
+        numberstyle=\tiny\color{purple},
+        stepnumber=1,
+        numbersep=10pt, % Adjusted to move line numbers outside the box
+        frame=single,
+        linewidth=\linewidth,
+        breaklines=true,
+        breakatwhitespace=false,
+        tabsize=4,
+        autogobble=true,
+        xleftmargin=0pt, % Adjusted to start from the left margin within the box
+        #1 % Options passed to lstset
+    }
+}
+{}
+\usetikzlibrary{graphs, arrows.meta}
+\geometry{a4paper, margin=1in}
+\usetikzlibrary{er}
+\lstset{upquote=true}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,shapes}
+\usetikzlibrary{positioning, arrows.meta}
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterReviewHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitReviewHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{reviewProblemCounter}
+\setcounter{reviewProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{reviewProblemCounter}}{}\nobreak{}
+
+%
+% Problem Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% review counter. This is useful for when the Problems given for your
+% assignment aren't sequential. See the last 3 Problems of this template for an
+% example.
+%
+\newenvironment{reviewProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{reviewProblemCounter}{#1}
+    \fi
+    \section{Problem \arabic{reviewProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterReviewHeader{reviewProblemCounter}
+}{
+    \exitReviewHeader{reviewProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{}
+\newcommand{\hmwkDueDate}{May 22, 2024}
+\newcommand{\hmwkClass}{Informatik 2 (PIB-INF2)}
+\newcommand{\hmwkClassInstructor}{Prof. Klaus Berberich}
+\newcommand{\hmwkAuthorName}{\textbf{Yahya Selo}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{3in}
+    \textmd{\textbf{\hmwkClass}}\\
+    \normalsize\vspace{0.2in}\small{Due\ on\ \hmwkDueDate\ at 10:00}\\
+    \vspace{0.2in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\begin{reviewProblem}
+    \subsection*{Hash-Tabellen}
+    Hash-Tabelle mit Verkettung stehen 10 Speicherplätze zur Verfügung
+    \section*{Question 1(a)}
+    Zuerst berechnen wir für jeden Schlüsselwert den Hash-Wert und ordnen ihn dann dem entsprechenden Speicherplatz zu.
+    
+    Die Hash-Funktion lautet:
+    \[
+        h(k) = (k \mod 43) \mod 10
+    \]
+    
+    \begin{enumerate}
+        \item Für \( k = 100 \):
+              \[
+                  100 \mod 43 = 14 \quad \text{und} \quad 14 \mod 10 = 4
+              \]
+              Also wird der Schlüsselwert 100 im Speicherplatz 4 abgelegt.
+              
+        \item Für \( k = 200 \):
+              \[
+                  200 \mod 43 = 28 \quad \text{und} \quad 28 \mod 10 = 8
+              \]
+              Also wird der Schlüsselwert 200 im Speicherplatz 8 abgelegt.
+              
+        \item Für \( k = 300 \):
+              \[
+                  300 \mod 43 = 42 \quad \text{und} \quad 42 \mod 10 = 2
+              \]
+              Also wird der Schlüsselwert 300 im Speicherplatz 2 abgelegt.
+              
+        \item Für \( k = 400 \):
+              \[
+                  400 \mod 43 = 11 \quad \text{und} \quad 11 \mod 10 = 1
+              \]
+              Also wird der Schlüsselwert 400 im Speicherplatz 1 abgelegt.
+              
+        \item Für \( k = 500 \):
+              \[
+                  500 \mod 43 = 25 \quad \text{und} \quad 25 \mod 10 = 5
+              \]
+              Also wird der Schlüsselwert 500 im Speicherplatz 5 abgelegt.
+              
+        \item Für \( k = 600 \):
+              \[
+                  600 \mod 43 = 39 \quad \text{und} \quad 39 \mod 10 = 9
+              \]
+              Also wird der Schlüsselwert 600 im Speicherplatz 9 abgelegt.
+              
+        \item Für \( k = 700 \):
+              \[
+                  700 \mod 43 = 7 \quad \text{und} \quad 7 \mod 10 = 7
+              \]
+              Also wird der Schlüsselwert 700 im Speicherplatz 7 abgelegt.
+              
+        \item Für \( k = 800 \):
+              \[
+                  800 \mod 43 = 21 \quad \text{und} \quad 21 \mod 10 = 1
+              \]
+              Also wird der Schlüsselwert 800 im Speicherplatz 1 abgelegt. Da der Speicherplatz 1 bereits von 400 belegt ist, wird 800 verkettet.
+              
+        \item Für \( k = 900 \):
+              \[
+                  900 \mod 43 = 35 \quad \text{und} \quad 35 \mod 10 = 5
+              \]
+              Also wird der Schlüsselwert 900 im Speicherplatz 5 abgelegt. Da der Speicherplatz 5 bereits von 500 belegt ist, wird 900 verkettet.
+              
+        \item Für \( k = 1000 \):
+              \[
+                  1000 \mod 43 = 9 \quad \text{und} \quad 9 \mod 10 = 9
+              \]
+              Also wird der Schlüsselwert 1000 im Speicherplatz 9 abgelegt. Da der Speicherplatz 9 bereits von 600 belegt ist, wird 1000 verkettet.
+    \end{enumerate}
+    
+    \subsection*{Zusammenfassung der Belegung der Speicherplätze:}
+    
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Speicherplatz} & \textbf{Schlüsselwerte} \\ \hline
+            0                      & leer                    \\ \hline
+            1                      & 400, 800                \\ \hline
+            2                      & 300                     \\ \hline
+            3                      & leer                    \\ \hline
+            4                      & 100                     \\ \hline
+            5                      & 500, 900                \\ \hline
+            6                      & leer                    \\ \hline
+            7                      & 700                     \\ \hline
+            8                      & 200                     \\ \hline
+            9                      & 600, 1000               \\ \hline
+        \end{tabular}
+        \caption{Belegung der Speicherplätze}
+        \label{table:hash_table}
+    \end{table}
+    
+    \section*{Question 1(b)}
+    
+    Bei der Verwendung von Hash-Tabellen kann es vorkommen, dass manche Speicherplätze mehrfach und andere gar nicht belegt sind. Wählen Sie 10 Schlüsselwerte, sodass diese beim Einfügen in die Hash-Tabelle alle auf denselben Speicherplatz gehasht werden. Verwenden Sie die Hash-Tabelle aus Aufgabenteil (a).
+    
+    \subsection*{Lösung}
+    
+    Wir wollen 10 Schlüsselwerte finden, die alle auf denselben Speicherplatz gehasht werden. Betrachten wir Speicherplatz 0 und wählen Schlüsselwerte \( k \), sodass \( (k \mod 43) \mod 10 = 0 \).
+    
+    Es muss also gelten \( k \mod 43 = 0, 10, 20, 30 \). Um sicherzustellen, dass sie beim Einfügen alle auf denselben Speicherplatz gehasht werden, können wir \( k \) als:
+    
+    \[
+        k = 43 \times n
+    \]
+    
+    \[
+        k \mod 43 = 0 \quad \text{und} \quad 0 \mod 10 = 0
+    \]
+    
+    Hier sind 10 Schlüsselwerte, die alle auf Speicherplatz 0 gehasht werden:
+    
+    \[
+        k = 0, 43, 86, 129, 172, 215, 258, 301, 344, 387
+    \]
+    
+    Für alle diese Werte gilt:
+    
+    \[
+        k \mod 43 = 0 \quad \text{und} \quad 0 \mod 10 = 0
+    \]
+    
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Speicherplatz} & \textbf{Schlüsselwerte}                      \\ \hline
+            0                      & 0, 43, 86, 129, 172, 215, 258, 301, 344, 387 \\ \hline
+            1                      & leer                                         \\ \hline
+            2                      & leer                                         \\ \hline
+            3                      & leer                                         \\ \hline
+            4                      & leer                                         \\ \hline
+            5                      & leer                                         \\ \hline
+            6                      & leer                                         \\ \hline
+            7                      & leer                                         \\ \hline
+            8                      & leer                                         \\ \hline
+            9                      & leer                                         \\ \hline
+        \end{tabular}
+        \caption{Belegung der Speicherplätze für Teil (b)}
+        \label{table:hash_table_b}
+    \end{table}
+    
+    
+\end{reviewProblem}
+\pagebreak
+
+\begin{reviewProblem}
+    \subsection*{Grundbegriffe Graphen}
+    \begin{tikzpicture}[>=Stealth, node distance=3cm, on grid, auto]
+        % Define nodes
+        \node[state] (0) {0};
+        \node[state] (1) [above right=of 0] {1};
+        \node[state] (2) [right=of 0] {2};
+        \node[state] (3) [right=of 1] {3};
+        \node[state] (5) [right=of 2] {5};
+        \node[state] (4) [below right=of 0] {4};
+        
+        % Define edges (example edges, you can customize)
+        \path[->] (0) edge (1)
+        (0) edge (2)
+        (1) edge (3)
+        (2) edge (1)
+        (3) edge (2)
+        (3) edge[bend left] (4)
+        (4) edge (0)
+        (5) edge (3);
+    \end{tikzpicture}
+    \begin{enumerate}[label=\alph*.]
+        \item
+        \item
+        \item
+        \item
+        \item
+        \item
+        \item
+    \end{enumerate}
+\end{reviewProblem}
+
+\pagebreak
+\begin{reviewProblem}
+    \subsection*{Knotengrade bestimmen}
+    \begin{enumerate}[label=\alph*.]
+        \item
+        \item
+    \end{enumerate}
+\end{reviewProblem}
+\pagebreak
+
+\pagebreak
+\begin{reviewProblem}
+    \subsection*{Vollständiger Graph}
+    
+\end{reviewProblem}
+\pagebreak
+
+\begin{reviewProblem}
+    \subsection*{Knoten zählen}
+    \begin{enumerate}[label=\alph*.]
+        \item
+        \item
+        \item
+    \end{enumerate}
+\end{reviewProblem}
+
+\end{document}

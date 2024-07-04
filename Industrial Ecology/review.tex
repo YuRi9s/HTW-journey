@@ -1,0 +1,294 @@
+\documentclass{article}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{xcolor,listings}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{venndiagram}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{marvosym}
+\usepackage{listings,lstautogobble}
+
+\lstnewenvironment{javacode}[1][]
+{
+    \lstset{
+        language=Java,
+        basicstyle=\small\ttfamily,
+        keywordstyle=\color{blue},
+        commentstyle=\color{green!40!black},
+        stringstyle=\color{red},
+        numbers=left,
+        numberstyle=\tiny\color{purple},
+        stepnumber=1,
+        numbersep=10pt, % Adjusted to move line numbers outside the box
+        frame=single,
+        linewidth=\linewidth,
+        breaklines=true,
+        breakatwhitespace=false,
+        tabsize=4,
+        autogobble=true,
+        xleftmargin=0pt, % Adjusted to start from the left margin within the box
+        #1 % Options passed to lstset
+    }
+}
+{}
+
+\geometry{a4paper, margin=1in}
+\usetikzlibrary{er}
+\lstset{upquote=true}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning,shapes}
+\usetikzlibrary{positioning, arrows.meta}
+\usetikzlibrary{automata,positioning}
+
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Review Sections
+%
+
+\newcommand{\enterReviewHeader}[1]{
+    \nobreak\extramarks{}{Review \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Review \arabic{#1} (continued)}{Review \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitReviewHeader}[1]{
+    \nobreak\extramarks{Review \arabic{#1} (continued)}{Review \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Review \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{reviewProblemCounter}
+\setcounter{reviewProblemCounter}{1}
+\nobreak\extramarks{Review \arabic{reviewProblemCounter}}{}\nobreak{}
+
+%
+% Review Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% review counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{reviewProblem}[1][-1]{
+    \ifnum#1>0
+        \setcounter{reviewProblemCounter}{#1}
+    \fi
+    \section{Review \arabic{reviewProblemCounter}}
+    \setcounter{partCounter}{1}
+    \enterReviewHeader{reviewProblemCounter}
+}{
+    \exitReviewHeader{reviewProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{}
+\newcommand{\hmwkDueDate}{unkown}
+\newcommand{\hmwkClass}{Industrial Ecology (PIB-INEC/KIB-INEC/MAB.4.2.6.4)}
+\newcommand{\hmwkClassInstructor}{Steven P. Frysinger }
+\newcommand{\hmwkAuthorName}{\textbf{Yahya Selo}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{3in}
+    \textmd{\textbf{\hmwkClass}}\\
+    \normalsize\vspace{0.2in}\small{Due\ on\ \hmwkDueDate\ at 20:00}\\
+    \vspace{0.2in}\large{\textit{\hmwkClassInstructor}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+
+\maketitle
+
+
+\pagebreak
+\tableofcontents
+
+\section*{Team}
+\begin{minipage}[t]{0.3\textwidth}
+    Yahya Elshekh Selo\\
+    Matr. 5013655
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    Sherwan Diko\\
+    Matr. 5013656
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+    Mohamad Ata Suleiman\\
+    Matr. 3855619
+\end{minipage}
+
+\pagebreak
+\begin{reviewProblem}
+
+    \section{Introduction}
+    \begin{itemize}
+        \item Definition of E-Waste
+        \item Importance of E-Waste Recycling
+        \item Overview of the global e-waste problem
+    \end{itemize}
+
+    \section{Sources of E-Waste}
+    \begin{itemize}
+        \item Common types of e-waste (e.g., computers, smartphones, televisions, etc.)
+        \item Major contributors to e-waste (households, businesses, government agencies)
+        \item Trends in e-waste generation
+    \end{itemize}
+
+    \section{Environmental and Health Impacts}
+    \begin{itemize}
+        \item Toxic substances in e-waste (e.g., lead, mercury, cadmium, etc.)
+        \item Environmental impact of improper disposal (soil, water, air pollution)
+        \item Health risks associated with e-waste exposure (both in recycling facilities and through environmental contamination)
+    \end{itemize}
+
+    \section{Current E-Waste Recycling Practices}
+    \begin{itemize}
+        \item Collection methods (e.g., curbside pickup, drop-off centers, manufacturer take-back programs)
+        \item Recycling processes (manual disassembly, shredding, separation of materials)
+        \item Technologies used in e-waste recycling (mechanical processes, chemical treatments)
+    \end{itemize}
+
+    \section{Challenges in E-Waste Recycling}
+    \begin{itemize}
+        \item Informal recycling sectors and associated risks
+        \item Lack of infrastructure and facilities in many regions
+        \item Economic challenges (cost of recycling vs. profit from recovered materials)
+        \item Regulatory and enforcement issues
+    \end{itemize}
+
+    \section{Case Studies}
+    \begin{itemize}
+        \item Successful e-waste recycling programs (e.g., Europe’s WEEE Directive, Japan’s Home Appliance Recycling Law)
+        \item Examples of companies with robust recycling initiatives (e.g., Apple’s recycling robots, Dell’s recycling program)
+    \end{itemize}
+
+    \section{Innovative Solutions and Technologies}
+    \begin{itemize}
+        \item Advances in recycling technology (e.g., robotics, AI sorting, chemical recycling methods)
+        \item Design for recycling (products designed to be easily recyclable)
+        \item Circular economy approaches (remanufacturing, refurbishment)
+    \end{itemize}
+
+    \section{Regulations and Policies}
+    \begin{itemize}
+        \item Overview of international and national regulations governing e-waste (e.g., Basel Convention, EU directives, national laws)
+        \item Extended Producer Responsibility (EPR) policies
+        \item Role of government and policy in promoting and enforcing e-waste recycling
+    \end{itemize}
+
+    \section{Economic and Social Aspects}
+    \begin{itemize}
+        \item Economic benefits of e-waste recycling (job creation, recovery of valuable materials)
+        \item Social implications (impact on communities, ethical recycling practices)
+        \item Collaboration between stakeholders (governments, NGOs, private sector)
+    \end{itemize}
+
+    \section{Public Awareness and Education}
+    \begin{itemize}
+        \item Importance of consumer awareness and participation
+        \item Educational campaigns and initiatives to promote recycling
+        \item How consumers can responsibly dispose of e-waste
+    \end{itemize}
+
+    \section{Future Directions and Recommendations}
+    \begin{itemize}
+        \item Potential for improving e-waste recycling rates
+        \item Recommendations for policy makers, industry, and consumers
+        \item Future trends in e-waste generation and management
+    \end{itemize}
+
+    \section{Conclusion}
+    \begin{itemize}
+        \item Summary of key points
+        \item The critical role of e-waste recycling in sustainable development
+        \item Call to action for increased efforts in e-waste recycling
+    \end{itemize}
+
+\end{reviewProblem}
+
+\end{document}

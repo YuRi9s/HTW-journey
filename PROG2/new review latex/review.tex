@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+% Title Formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Custom Commands for Style
+\newcommand{\smallgray}[1]{\textcolor{gray}{\small #1}}
+
+% Horizontal Rule with Custom Thickness
+\newcommand{\myrule}{\noindent\rule{\textwidth}{0.5pt}}
+
+\begin{document}
+
+% Custom Title
+\noindent\smallgray{Programmierung 2 - Sommersemester 2024}
+
+\section*{\LARGE Review-Report zur Übung Nr. \dots}
+
+\myrule
+
+\vspace{0.5cm}
+
+\noindent\textbf{Coding-Team:}\\
+\textbf{Review erhalten von:}
+
+\vspace{0.5cm}
+
+\myrule
+
+\vspace{1cm}
+
+\section*{Feedback und Code-Qualität}
+
+\subsection*{Welche spezifischen Aspekte Ihres Codes wurden im Review positiv hervorgehoben?}
+\begin{itemize}
+    \item Warum wurden sie Ihrer Meinung nach hervorgehoben?
+    \item Welche guten Praktiken spiegeln diese Aspekte wider?
+\end{itemize}
+
+\subsection*{Identifizieren Sie spezifische Anforderungen, die nicht oder nur teilweise umgesetzt wurden.}
+\begin{itemize}
+    \item Beschreiben Sie die Verbesserungsvorschläge, die Sie erhalten haben.
+\end{itemize}
+
+\subsection*{Nennen Sie drei konkrete Verbesserungsvorschläge, die Ihnen für sauberen, lesbaren und wartbaren Code gemacht wurden.}
+\begin{itemize}
+    \item Wie werden Sie diese umsetzen?
+\end{itemize}
+
+\subsection*{Welche weiteren konkreten Ratschläge haben Sie erhalten und wie können diese die Qualität Ihrer Implementierung verbessern?}
+
+\section*{Verständnis und Lernprozess}
+
+In diesem Abschnitt reflektieren Sie Ihr Verständnis der behandelten Konzepte und Ihre Fortschritte beim Erreichen der Lernziele. Die Fragen sollen Sie dazu anregen, über offene Fragen und unklare Aspekte nachzudenken. Wenn Sie sich aktiv mit diesen Fragen auseinandersetzen, können Sie Wissenslücken erkennen und gezielt Maßnahmen ergreifen, um diese zu schließen.
+
+\subsection*{Welche Fragen zu Ihrem Code konnten Sie während des Reviews nicht beantworten und wie werden Sie diese Unklarheiten klären?}
+
+\subsection*{Welche Aspekte der Übung sind Ihnen unklar geblieben und welche Schritte werden Sie unternehmen, um diese zu verstehen?}
+
+\subsection*{Bewerten Sie, inwieweit Sie die Lernziele der Übung erreicht haben.}
+\begin{itemize}
+    \item Welche Lernziele haben Sie nicht erreicht und was brauchen Sie, um diese Lücken zu schließen?
+\end{itemize}
+
+\subsection*{In welchen Bereichen fühlen Sie sich nach dem Peer Review sicherer und warum?}
+
+\section*{Reflexion über Feedback und Teamdynamik}
+
+Die folgenden Fragen beziehen sich auf Ihre Reaktion auf das erhaltene Feedback und Ihre Interaktion im Teamkontext. Hier haben Sie die Möglichkeit, über die Dynamik und die Herausforderungen der Teamarbeit nachzudenken. Indem Sie verstehen, wie Feedback integriert und Meinungsverschiedenheiten gelöst werden, bauen Sie wichtige soziale Kompetenzen aus, die in der Berufspraxis von großem Wert sind.
+
+\subsection*{Welche Aspekte des Feedbacks haben Sie am meisten überrascht und warum?}
+
+\subsection*{Wie werden Sie das Feedback in zukünftigen Übungen und Projekten anwenden?}
+
+\subsection*{Beschreiben Sie eine Situation während des Reviews, in der Sie eine Meinungsverschiedenheit hatten.}
+\begin{itemize}
+    \item Wie wurde sie gelöst?
+\end{itemize}
+
+\end{document}
