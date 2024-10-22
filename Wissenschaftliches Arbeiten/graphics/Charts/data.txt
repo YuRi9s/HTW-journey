@@ -1,0 +1,6 @@
+Betriebssysteme  Blue_Screen  Black_Screen  Red_Screen
+Windows_{10}       50           10            5
+Windows_{11}       20           15            3
+Windows_{Vista}    10           5             8
+Linux            30           2             0
+AmigaOS          5            1             0

@@ -1,0 +1,90 @@
+\begin{thebibliography}{{Wik}nd}
+
+\bibitem[Aca]{avast}
+Avast Academy.
+\newblock So beheben sie den bluescreen of death (bsod) unter windows 10 und
+  11.
+\newblock \url{https://www.avast.com/de-de/c-how-to-fix-blue-screen-of-death}.
+\newblock Accessed: 12.Juli.2024.
+
+\bibitem[AIRS17]{WindowsInternalsPart1}
+Andrea Allievi, Alex Ionescu, Mark Russinovich, and David~A. Solomon.
+\newblock {\em Windows Internals, Part 1}.
+\newblock Microsoft Press, 7th edition, 2017.
+
+\bibitem[AIRS21]{WindowsInternalsPart2}
+Andrea Allievi, Alex Ionescu, Mark Russinovich, and David~A. Solomon.
+\newblock {\em Windows Internals, Part 2}.
+\newblock Microsoft Press, 7th edition, 2021.
+
+\bibitem[Mal]{malwarebytes}
+Malwarebytes.
+\newblock What is bsod.
+\newblock
+  \url{https://www.malwarebytes.com/cybersecurity/computer/blue-screen-of-death}.
+\newblock Accessed: 12.Juli.2024.
+
+\bibitem[{Mos}17]{mosaic2017}
+{Mosaic Data Science}.
+\newblock Diagnosing windows 10 crashes with predictive ai services.
+\newblock
+  \url{https://mosaicdatascience.com/2017/11/30/diagnosing-windows-10-crashes-predictive-ai-services/},
+  2017.
+\newblock Available online; accessed 14.Juli.2024.
+
+\bibitem[Ope]{ChatGPT}
+OpenAI.
+\newblock Chatgpt.
+\newblock \url{https://chatgpt.com/}.
+\newblock Accessed: 12.Juli.2024.
+
+\bibitem[{Rem}]{Remove}
+{RemovebG}.
+\newblock Remove background of picture.
+\newblock \url{https://www.remove.bg/}.
+
+\bibitem[Supa]{microsoft_support}
+Microsoft Support.
+\newblock Resolving blue screen errors in windows.
+\newblock
+  \url{https://support.microsoft.com/en-us/windows/resolving-blue-screen-errors-in-windows-60b01860-58f2-be66-7516-5c45a66ae3c6}.
+\newblock Accessed: 12.Juli.2024.
+
+\bibitem[Supb]{microsoft_forum}
+Microsoft Support.
+\newblock Täglich 5 verschiedene bluescreen.
+\newblock
+  \url{https://answers.microsoft.com/de-de/windows/forum/all/t%C3%A4glich-5-verschiedene-bluescreen/e6d8caaf-75b6-4e9c-ae38-747884d1879d}.
+\newblock Accessed: 12.Juli.2024.
+
+\bibitem[War21]{warren2021}
+Tom Warren.
+\newblock Microsoft’s blue screen of death is changing to black in windows
+  11.
+\newblock
+  \url{https://www.theverge.com/2021/7/1/22559852/microsoft-windows-11-black-blue-screen-of-death-bsod-change},
+  2021.
+\newblock Available online; accessed 14.Juli.2024.
+
+\bibitem[wik]{wikipedia}
+Bluescreen~(Windows) wiki.
+\newblock Bluescreen (windows).
+\newblock \url{https://de.wikipedia.org/wiki/Bluescreen_(Windows)}.
+\newblock Accessed: 12.Juli.2024.
+
+\bibitem[{Wik}nd]{wikicommons_bsod}
+{Wikimedia Commons}.
+\newblock Bsod.
+\newblock \url{https://commons.wikimedia.org/wiki/BSoD?uselang=de}, n.d.
+\newblock Available online; accessed 14 July 2024.
+
+\bibitem[{Win}21]{windows_insider2021}
+{Windows Insider Blog}.
+\newblock Releasing windows 11 build 22000.346 to beta and release preview
+  channels.
+\newblock
+  \url{https://blogs.windows.com/windows-insider/2021/11/12/releasing-windows-11-build-22000-346-to-beta-and-release-preview-channels/},
+  2021.
+\newblock Available online; accessed 14.Juli.2024.
+
+\end{thebibliography}

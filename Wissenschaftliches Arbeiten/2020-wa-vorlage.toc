@@ -1,0 +1,26 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {section}{\numberline {2}Hintergrund}{2}{section.2}%
+\contentsline {section}{\numberline {3}Methode}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Arten von BSODs}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ursachenanalyse}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Häufigste Ursachen für BSOD}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Verwaltung des BSOD in Windows}{4}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Evaluation}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Vergleich des Lösungsansatzes mit anderen bestehenden Ansätzen}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Diskussion der Vor- und Nachteile der verschiedenen Methoden}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Wie behebt man einen Blue Screen of Death?}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Fehlermeldungen in anderen Farben}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Windows 11 Schwarzer Bildschirm des Todes}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}MS-DOS 6 Schwarzer Bildschirm des Todes}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Windows 3.x Schwarzer Bildschirm des Todes}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Xbox 360 Schwarzer Bildschirm des Todes}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}OS/2 Schwarzer Bildschirm des Todes}{9}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Roter Bildschirm des Todes}{9}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Andere Verwendungen}{9}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Tabellen}{10}{subsection.5.8}%
+\contentsline {section}{\numberline {6}Fazit}{12}{section.6}%
+\contentsline {section}{Literaturverzeichnis}{14}{section*.13}%
+\contentsline {section}{Anhang}{15}{part*.15}%
+\contentsline {section}{\numberline {A}Quellen}{15}{appendix.A}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
